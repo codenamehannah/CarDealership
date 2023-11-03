@@ -9,16 +9,16 @@ public class Dealership {
     private String phone;
     private ArrayList<Vehicle> inventory;
 
-    public Dealership(String name, String address, String phone, ArrayList<Vehicle> inventory) {
+    public Dealership(String name, String address, String phone) {
         this.name = name;
         this.address = address;
         this.phone = phone;
-        this.inventory = inventory;
+        this.inventory = new ArrayList<>();
     }
     public List<Vehicle> getVehiclesByPrice(double min, double max){
         List<Vehicle> vehiclesInPriceRange = new ArrayList<>();
         for(Vehicle vehicle : inventory) {
-            if (vehicle.getprice() >= min && vehicle.getPrice() <= max) {
+            if (vehicle.getPrice() >= min && vehicle.getPrice() <= max) {
                 vehiclesInPriceRange.add(vehicle);
             }
         }
@@ -43,12 +43,11 @@ public class Dealership {
         }
         return vehiclesByColor;
     }
-    public List<Vehicle> getVehiclesByMielage(int min, int max) {
+    public List<Vehicle> getVehiclesByMileage(int min, int max) {
         List<Vehicle> vehiclesInMileageRange = new ArrayList<>();
         for (Vehicle vehicle : inventory ) {
             if (vehicle.getOdometer() >= min && vehicle.getOdometer() <= max) {
-                Vehicle Vehicle = null;
-                vehiclesInMileageRange.add(Vehicle);
+                vehiclesInMileageRange.add(vehicle);
             }
         }
         return vehiclesInMileageRange;
@@ -64,7 +63,7 @@ public class Dealership {
         return vehiclesByType;
     }
     public List<Vehicle> getAllVehicles() {
-        return new ArrayList<>(inventory); //Return a copy of the inventory list.
+        return inventory; //Return a copy of the inventory list.
     }
 
     public void addVehicle (Vehicle vehicle) {
@@ -74,5 +73,5 @@ public class Dealership {
     public void removeVehicle(Vehicle vehicle) {
         inventory.remove(vehicle);
     }
-    
+
 }
