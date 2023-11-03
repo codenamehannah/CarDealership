@@ -25,27 +25,83 @@ public class UserInterface {
             System.out.println("7) List All vehicles");
             System.out.println("8) Add a vheicle");
             System.out.println("9) Remove a vehicle");
-            System.out.println("99) Quit");
+            System.out.println("Q) Quit");
 
             String input = scanner.nextLine().trim();
             switch (input) {
-                case "1";
+                case "1":
                     processGetByPriceRequest();
                     break;
-                case "2";
+                case "2":
                     processGetMakeModelRequest();
                     break;
-                case "3";
+                case "3":
                     processGetYearRequest();
                     break;
-
+                case "4":
+                    processGetByColorRequest();
+                    break;
+                case "5":
+                  processGetByMileageRequest();
+                  break;
+                case "6":
+                  processGetByVehicleTypeRequest();
+                  break;
+                case "7":
+                  processGetByAllVehiclesRequest();
+                  break;
+                case "8":
+                  processAddVehicleRequest();
+                  break;
+                case "9":
+                  processRemoveVehicleRequest();
+                  break;
+                case "Q":
+                    running = false; // Exit loop and quit the program
+                    break;
+                default:
+                    System.out.println("Invalid option. Please select a valid option.");
             }
 
+            }
+            scanner.close(); //close scanner when done
 
 
 
         }
+
+    private void processRemoveVehicleRequest() {
     }
+
+    private void processAddVehicleRequest() {
+        
+    }
+
+    private void processGetByAllVehiclesRequest() {
+        
+    }
+
+    private void processGetByVehicleTypeRequest() {
+        
+    }
+
+    private void processGetByMileageRequest() {
+        
+    }
+
+    private void processGetByColorRequest() {
+        
+    }
+
+    private void processGetYearRequest() {
+        
+    }
+
+    private void processGetMakeModelRequest() {
+        
+    }
+
+}
 
     private void processGetByPriceRequest() {
     }
