@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.util.List;
+
 public class Dealership {
     private String name;
     private String address;
@@ -12,5 +14,15 @@ public class Dealership {
         this.phone = phone;
         this.inventory = inventory;
     }
-    
+    public List<Vehicle> getVehiclesByPrice(double min, double max){
+        List<Vehicle> vehiclesInPriceRange = new ArrayList<>();
+        for(Vehicle vehicle : inventory) {
+            if (vehicle.getprice() >= min && vehicle.getPrice() <= max) {
+                vehiclesInPriceRange.add(vehicle);
+            }
+        }
+        return vehiclesInPriceRange;
+        }
+       
+    }
 }
