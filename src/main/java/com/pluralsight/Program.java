@@ -1,4 +1,4 @@
 package com.pluralsight;
 
-public class Program {
+public class Program  {
 }
