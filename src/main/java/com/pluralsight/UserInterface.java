@@ -1,12 +1,10 @@
 package com.pluralsight;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.Scanner;
 
 public class UserInterface {
     private Dealership dealership;
-    public UserInterface() {
+    public UserInterface(Dealership dealership, DealershipFileManager fileManager) {
 
     }
     public void display() {
@@ -70,6 +68,9 @@ public class UserInterface {
 
         }
 
+    private void init() {
+    }
+
     private void processRemoveVehicleRequest() {
     }
 
@@ -101,7 +102,6 @@ public class UserInterface {
         
     }
 
-}
 
     private void processGetByPriceRequest() {
     }

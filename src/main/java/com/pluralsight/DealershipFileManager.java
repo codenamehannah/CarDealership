@@ -39,8 +39,11 @@ public class DealershipFileManager {
                 Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
                 dealership.addVehicle(vehicle);
             }
-} catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        return null;
+    }
+}
