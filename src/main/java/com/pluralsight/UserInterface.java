@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -62,13 +63,22 @@ public class UserInterface {
             }
 
             }
-            scanner.close(); //close scanner when done
+            scanner.close(); //close the scanner
 
 
 
         }
 
+
+    private void helperDisplayVehicles(List<Vehicle> listOfVehicles){
+        for(Vehicle vehicle : listOfVehicles) {
+            System.out.println(vehicle);
+        }
+
     private void init() {
+        DealershipFileManager dealershipFileManager = new DealershipFileManager();
+        dealership = dealershipFileManager.getDealership();
+
     }
 
     private void processRemoveVehicleRequest() {
@@ -79,6 +89,8 @@ public class UserInterface {
     }
 
     private void processGetByAllVehiclesRequest() {
+            helperDisplayVehicles(dealership.getAllVehicles());
+            }
         
     }
 
