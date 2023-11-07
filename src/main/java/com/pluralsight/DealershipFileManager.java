@@ -1,14 +1,13 @@
 package com.pluralsight;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DealershipFileManager {
-    private String filePath; // Set the path to your data file
+    private final String filePath; // Set the path to your data file
 
-    public DealershipFileManager(String filePath) {
+    public DealershipFileManager(String filePath) throws IOException {
         this.filePath = filePath;
     }
 
@@ -39,11 +38,45 @@ public class DealershipFileManager {
                 Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
                 dealership.addVehicle(vehicle);
             }
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         return null;
     }
+    public void saveDealership(Dealership dealership) throws IOException {
+        String name = dealership.getName();
+        String address = dealership.getAddress();
+        String phone = dealership.getPhone();
+        BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
+        writer.write(name + "|" + address + "|" + phone);
+        writer.newLine();
+    }
+
+    private Object dealership;
+    // VEHICLES
+    ArrayList<Vehicle> vehicles = dealership.getInventory();
+    List<Vehicle> vehicles = dealership.getAllVehicles();
+
+                for (Vehicle v : vehicles) {
+        int vin = v.getVin();
+        int year = v.getYear();
+        String make = v.getMake();
+        String model = v.getModel();
+        String vehicleType = v.getVehicleType();
+        String color = v.getColor();
+        int odometer = v.getOdometer();
+        double price = v.getPrice();
+        BufferedWriter writer;
+        writer = null;
+        writer.write(vin + "|" + year + "|" + make + "|" + model + "|" +
+                vehicleType + "|" + color + "|" + odometer + "|" + price);
+        writer.newLine();
+    }
+
+    public Dealership getDealership() {
+        return null;
+    }
+        writer.close();
+        }
+
 }

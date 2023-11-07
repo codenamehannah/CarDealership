@@ -10,7 +10,7 @@ public class UserInterface {
     }
     public void display() {
         Scanner scanner = new Scanner(System.in);
-        init();
+
 
         boolean running = true;
         while (running) {

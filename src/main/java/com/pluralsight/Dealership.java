@@ -74,4 +74,12 @@ public class Dealership {
         inventory.remove(vehicle);
     }
 
+    public String getPhone() {
+    }
+
+    public String getAddress() {
+    }
+
+    public String getName() {
+    }
 }
